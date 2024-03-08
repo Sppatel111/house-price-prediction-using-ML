@@ -1,0 +1,192 @@
+/* style.css */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('image/house-background.jpg');
+   /* background-color: #E0E0E0;*/ /* Lighter background color */
+    color: #333333; /* Dark text color */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 15px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+h1, p {
+    text-align: center; /* Align h1 and p center */
+}
+
+h1 {
+    color: #4e4e4e; /* Darker text color for headings */
+}
+
+label {
+    color: #111; /* Adjust the color as needed */
+}
+
+
+button {
+    display: block;
+    margin: 0 auto; /* Center the button horizontally */
+    background-color: #ff5555; /* Red for buttons */
+    color: #ffffff; /* White text color for buttons */
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="checkbox"],
+select {
+    width: calc(100% - 24px); /* Adjust the width of input elements */
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+/* Specific Styles for Each Page */
+
+/* Home Page */
+.home-container {
+    padding-top: 70px;
+    
+    
+}
+
+.checkbox-grid {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 10px;
+}
+
+.checkbox-grid label {
+    margin-right: 10px; /* Add some spacing between the label and checkbox */
+}
+
+.greeting-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.greeting {
+    background-image: url('image/house-background.jpg');
+    /*background-color: #ff5555; *//* Darker color */
+    color: #ffffff; /* White text color */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Landing Page Styles */
+
+/* Header */
+.header {
+    background-color: #333; /* Dark grey background */
+    color: #333; /* White text */
+    padding: 20px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Align items to the right */
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    color:#777;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #333; 
+    font-weight: bold;
+}
+
+/* Align navigation to the right */
+.nav-menu {
+    justify-content: flex-end;
+    color:#999;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('image/house-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+}
+
+.hero-content {
+    color: #fff;
+}
+
+.hero-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+}
+
+.try-now-btn {
+    display: inline-block;
+    background-color: #ff5555; /* Red button */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.try-now-btn:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Footer */
+.footer {
+    background-color: #333; /* Dark grey background */
+    color: #333; /* White text */
+    text-align: center;
+    padding: 20px 0;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% if name %}
+            <div class="greeting-container">
+                <h1 class="greeting">Hello, {{ name }}</h1>
+            </div>
+        {% endif %}
+
+        
+        <h1>Sell Your Home</h1>
+        <form action="{{ url_for('sell_home') }}" method="post">
+            <div class="form-group">
+                <label for="locality">Locality:</label>
+                <select name="locality" id="locality" required>
+                    <option value="" disabled selected>Select Locality</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Pune">Pune</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bhk">BHK (Bedrooms):</label>
+                <input type="number" name="bhk" id="bhk" placeholder="Enter number of bedrooms" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bathrooms">Bathrooms:</label>
+                <input type="number" name="bathrooms" id="bathrooms" placeholder="Enter number of bathrooms" required>
+            </div>
+
+            <div class="form-group checkbox-grid">
+                <label for="furnishing">Furnishing:</label>
+                <input type="checkbox" name="furnishing" id="furnishing">
+            
+                <label for="parking">Parking:</label>
+                <input type="checkbox" name="parking" id="parking">
+            </div>
+
+            <div class="form-group">
+                <label for="area">Area (sqft):</label>
+                <input type="number" name="area" id="area" placeholder="Enter area in square feet" required>
+            </div>
+
+            <div class="form-group">
+                <label for="type">Type:</label>
+                <select name="type" id="type" required>
+                    <option value="" disabled selected>Select Type</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Villa">Villa</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select name="status" id="status" required>
+                    <option value="" disabled selected>Select Status</option>
+                    <option value="Under Construction">Under Construction</option>
+                    <option value="Ready to Move">Ready to Move</option>
+                </select>
+            </div>
+
+            <button type="submit">Get Selling Price Estimate</button>
+        </form>
+    </div>
+</body>
+</html>

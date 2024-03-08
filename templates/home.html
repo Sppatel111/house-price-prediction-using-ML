@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Choose option</title>
+</head>
+
+<body>
+    <div class="container home-container">
+        <h1>Select Your Preference</h1>
+        <form action="{{ url_for('home') }}" method="post">
+            <button class="btn" name="option" value="buy">BUY</button> 
+            <br><br>
+            <button class="btn" name="option" value="sell">SELL</button> 
+        </form>
+    </div>
+</body>
+
+</html>

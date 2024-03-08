@@ -1,0 +1,11 @@
+database: house_price
+
+
+CREATE TABLE USER_ACCOUNTS (
+    user_id INT NOT NULL AUTO_INCREMENT,
+    email VARCHAR(50),
+    name VARCHAR(255),
+    password VARCHAR(255),
+    role VARCHAR(50),
+    PRIMARY KEY (user_id)
+);

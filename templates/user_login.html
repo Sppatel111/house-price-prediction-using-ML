@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>User Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container login-container">
+        <h1>User Login</h1>
+        <form action="{{ url_for('user_login') }}" method="post">
+            {% if msg %}
+                <div style="color: red; margin-bottom: 10px; text-align: center;">{{ msg }}</div>
+            {% endif %}
+            <div>
+                <label for="email">E-mail ID:</label>
+                <input id="email" name="email" type="email" placeholder="Enter E-mail ID" required />
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input id="password" name="password" type="password" placeholder="Enter Password" required />
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="{{ url_for('user_register') }}">Register</a></p>
+    </div>
+</body>
+
+</html>
