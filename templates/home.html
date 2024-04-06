@@ -4,18 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Choose option</title>
+    <title>Choose Option</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/container.css">
 </head>
 
-<body>
-    <div class="container home-container">
-        <h1>Select Your Preference</h1>
-        <form action="{{ url_for('home') }}" method="post">
-            <button class="btn" name="option" value="buy">BUY</button> 
-            <br><br>
-            <button class="btn" name="option" value="sell">SELL</button> 
+<body class="auth">
+    <div class="container mt-5">
+        <h1 class="text-center">Select Your Preference</h1>
+        <p class="lead text-center mt-4">Welcome to our platform! Choose your preferred option below to get started.</p>
+        <form action="{{ url_for('home') }}" method="post" class="text-center mt-4">
+            <button class="btn btn-primary mr-2" name="option" value="buy">BUY</button>
+            <button class="btn btn-primary" name="option" value="sell">SELL</button>
         </form>
+        
     </div>
 </body>
 

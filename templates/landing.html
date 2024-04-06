@@ -4,34 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House Price Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bootstrap.min.css">
     <link rel="stylesheet" href="static/style.css">
+    <style>
+        
+    </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="container">
-                <h1 class="logo">House Price Prediction</h1>
-                <ul class="nav-menu">
-                    <li><a href="#">About</a></li>
-                    <li><a href="/user_login">Log in</a></li>
-                    <li><a href="/user_register">Register</a></li>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">House Price Prediction</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="#about">About Us</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="/user_login">Login</a>
+                    </li>
                 </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
+    <!-- Landing Page (Hero Section) -->
     <section class="hero">
-        <div class="hero-content">
+        <div class="container hero-content">
             <h2 class="hero-title">Empowering Informed Real Estate Decisions</h2>
             <p class="hero-subtitle">Welcome to the House Price Prediction Platform</p>
             <a href="/home" class="try-now-btn">Try Now</a>
         </div>
     </section>
 
-    <footer class="footer">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
-            <p>&copy; 2024 House Price Prediction</p>
+            <h2 class="text-center">About House Price Prediction</h2>
+            <p>House Price Prediction is a revolutionary platform designed to assist users in making informed decisions within the real estate market. By leveraging advanced machine learning algorithms, our platform accurately predicts property prices based on various factors such as location, size, amenities, and market trends.</p>
+            <p>Whether you're a homebuyer, seller, investor, or real estate professional, our platform provides valuable insights to guide your decision-making process. With our user-friendly interface and comprehensive data analysis, you can confidently navigate the complexities of the real estate market.</p>
+            <p>Join us today and experience the power of predictive analytics in transforming your real estate endeavors.</p>
         </div>
-    </footer>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="text-center">Frequently Asked Questions</h2>
+            <div class="accordion">
+                
+                
+                <div class="accordion-item">
+                    <h3 class="accordion-title">Q: What factors are considered in the prediction?</h3>
+                    <div class="accordion-content">
+                        <p>Factors such as location, size, amenities, and market trends are considered in the prediction models.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h3 class="accordion-title">Q: How accurate are the predictions?</h3>
+                    <div class="accordion-content">
+                        <p>Our predictions are highly accurate, with models achieving R-squared values above 0.9.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h3 class="accordion-title">Q: Can I try the platform for free?</h3>
+                    <div class="accordion-content">
+                        <p>Yes, our platform offers a free trial for users to experience the predictive analytics firsthand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact">
+  <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>Contact Details</p>
+                <ul class="list-unstyled">
+                    <li>
+                        <strong>Phone:</strong> +91 9327172210 &nbsp; | &nbsp;
+                        <strong>Email:</strong> snehagaurangbhaipatel@gmail.com &nbsp; | &nbsp;
+                        <strong>Address:</strong> Anand, Gujarat, India.
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-12 text-center mt-3">
+                <p>&copy; 2024 House Price Prediction. </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const accordionTitles = document.querySelectorAll('.accordion-title');
+
+    accordionTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            const accordionItem = title.parentElement;
+            const accordionContent = accordionItem.querySelector('.accordion-content');
+            
+            accordionContent.classList.toggle('open');
+            accordionContent.style.maxHeight = accordionContent.classList.contains('open') ? accordionContent.scrollHeight + "px" : "0";
+        });
+    });
+});
+
+</script>
+
 </body>
 </html>

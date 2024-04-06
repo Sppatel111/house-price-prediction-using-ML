@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template, redirect,session,url_for
 from flask_mysqldb import MySQL
-
+import joblib
+from sklearn.preprocessing import LabelEncoder
+import numpy as np 
 app= Flask(__name__)
 
 #database connectivity
@@ -117,7 +119,54 @@ def sell_home():
     else:
         return redirect(url_for('user_login'))
 
-#Predict page
+
+# Predict page
+@app.route('/predict', methods=['GET', 'POST'])
+def predict():
+    if request.method == 'POST':
+        
+        # Get the input data from the form
+        area_type = request.form['area_type']
+        
+        label_encoder = LabelEncoder()
+        area_type = label_encoder.fit_transform([area_type])[0]
+        
+        size_bhk = int(request.form['size_bhk'])
+        total_sqft = float(request.form['total_sqft'])
+        bath = int(request.form['bath'])
+        balcony = int(request.form['balcony'])
+        price_per_sqft = float(request.form['price_per_sqft'])
+        
+        locality = request.form['locality']
+        
+        if locality=="Bangalore":  
+            # Load the saved model
+            loaded_model = joblib.load('bangalore_gbr_model.joblib')
+            
+            # Make a prediction using the loaded model
+            prediction = loaded_model.predict([[area_type, size_bhk, total_sqft, bath, balcony, price_per_sqft]])
+            #print("Prediction value", prediction)
+            
+            
+        if locality=="Pune":  
+            # Load the saved model
+            loaded_model = joblib.load('pune_gbr_model.joblib')
+            
+            # Make a prediction using the loaded model
+            prediction = loaded_model.predict([[area_type, size_bhk, total_sqft, bath, balcony, price_per_sqft]])
+            
+        # Format the prediction as a currency value in lakh
+        #prediction_in_lakh = "{:.2f} lakh".format(prediction[0])
+        
+        # Convert the prediction to an integer value in rupees
+        #prediction_integer = int(prediction[0] * 100000)
+        
+        # Convert the prediction to an integer value in rupees using NumPy
+        prediction_integer = np.round(prediction[0] * 100000).astype(int)
+        
+        return render_template('prediction_result.html', prediction=prediction_integer)
+    
+    return render_template('predict.html')
 
 
 

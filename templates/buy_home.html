@@ -1,64 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy Your Dream Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Predict Buying Price</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/container.css">
 </head>
-<body>
-    <div class="container">
-        {% if name %}
-            <div class="greeting-container">
-                <h1 class="greeting">Hello, {{ name }}</h1>
-            </div>
-        {% endif %}
-        
-        <h1>Buy Your Dream Home</h1>
-        <form action="{{ url_for('buy_home') }}" method="post">
-            <div class="form-group">
+
+<body class="auth">
+    <div class="container mt-3 mb-3"> 
+        <h1 class="text-center">Predict Buying Price</h1>
+        <p class="lead text-center mt-4">Fill out the following details to predict the buying price of your dream property:</p> <!-- Added informative content -->
+        <form action="{{ url_for('predict') }}" method="post">
+             <div class="form-group">
                 <label for="locality">Locality:</label>
-                <select name="locality" id="locality" required>
+                <select name="locality" id="locality" class="form-control" required>
                     <option value="" disabled selected>Select Locality</option>
                     <option value="Bangalore">Bangalore</option>
                     <option value="Pune">Pune</option>
                 </select>
             </div>
-
             <div class="form-group">
-                <label for="bhk">BHK (Bedrooms):</label>
-                <input type="number" name="bhk" id="bhk" placeholder="Enter number of bedrooms" required>
-            </div>
-
-            <div class="form-group">
-                <label for="bathrooms">Bathrooms:</label>
-                <input type="number" name="bathrooms" id="bathrooms" placeholder="Enter number of bathrooms" required>
-            </div>
-
-            <div class="form-group checkbox-grid">
-                <label for="furnishing">Furnishing:</label>
-                <input type="checkbox" name="furnishing" id="furnishing">
-          
-                <label for="parking">Parking:</label>
-                <input type="checkbox" name="parking" id="parking">
-            </div>
-
-            <div class="form-group">
-                <label for="area">Area (sqft):</label>
-                <input type="number" name="area" id="area" placeholder="Enter area in square feet" required>
-            </div>
-
-            <div class="form-group">
-                <label for="type">Type:</label>
-                <select name="type" id="type" required>
-                    <option value="" disabled selected>Select Type</option>
-                    <option value="Apartment">Apartment</option>
-                    <option value="Villa">Villa</option>
+                <label for="area_type">Area Type:</label>
+                <select name="area_type" id="area_type" class="form-control" required>
+                    <option value="" disabled selected>Select Area Type</option>
+                    <option value="Super build-up Area">Super build-up Area</option>
+                    <option value="Build-up Area">Build-up Area</option>
+                    <option value="Plot Area">Plot Area</option>
+                    <option value="Carpet Area">Carpet Area</option>
                 </select>
             </div>
 
-            <button type="submit">Get Purchase Estimate</button>
+            <div class="form-group">
+                <label for="size_bhk">Size (BHK):</label>
+                <input type="number" name="size_bhk" id="size_bhk" class="form-control" placeholder="Enter size in BHK" required>
+            </div>
+
+            <div class="form-group">
+                <label for="total_sqft">Total Sqft:</label>
+                <input type="number" name="total_sqft" id="total_sqft" class="form-control" placeholder="Enter total sqft" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bath">Bath:</label>
+                <input type="number" name="bath" id="bath" class="form-control" placeholder="Enter number of bathrooms" required>
+            </div>
+
+            <div class="form-group">
+                <label for="balcony">Balcony:</label>
+                <input type="number" name="balcony" id="balcony" class="form-control" placeholder="Enter number of balconies" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price_per_sqft">Your approximate budget Price Per Sqft:</label>
+                <input type="number" name="price_per_sqft" id="price_per_sqft" class="form-control" placeholder="Enter price per sqft" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary d-block mx-auto">Predict Price</button> <!-- Centered the button -->
         </form>
     </div>
 </body>
+
 </html>

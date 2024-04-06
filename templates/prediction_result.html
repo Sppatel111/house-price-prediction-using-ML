@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/container.css">
+    <style>
+        .prediction {
+            margin-bottom: 20px;
+            font-size: 24px; 
+            font-weight: bold;
+            color: #608e9b; 
+        }
+        .result-container {
+            min-height:100px ; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+        }
+        .content-container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body class="auth">
+    <div class="container mt-2 mb-2">
+        <div class="result-container"> 
+            <div class="text-center content-container"> 
+                <h1 class="result-title">Prediction Result</h1>
+                <p class="prediction" id="formattedPrediction"></p> 
+            </div>
+        </div>
+        <div class="text-center mt-4"> 
+            <p class="lead text-justify">This prediction is based on the input parameters provided by the user.
+            Keep in mind that this is an estimated value and the actual price may vary.
+            Our prediction model utilizes various factors to provide an estimation, but it does not account for all potential variables affecting property prices.
+            Therefore, the actual selling price may differ from the predicted value.
+            If you have any questions or need further assistance, please feel free to contact us.</p>
+            <p class="text-center">Thank you for using our prediction service!</p>
+            <a href="/" class="btn btn-primary mt-4">Go to Home Page</a> 
+        </div>
+    </div>
+
+    <script>
+        const prediction = {{ prediction }}; 
+
+        const formattedPrediction = new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(prediction);
+        
+        document.getElementById('formattedPrediction').textContent = `Rs. ${formattedPrediction}`;
+    </script>
+</body>
+</html>
