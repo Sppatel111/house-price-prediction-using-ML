@@ -6,14 +6,33 @@
 }
 .navbar-brand {
     font-weight: bold;
+    
 }
 
+/* Custom styles for the navigation brand */
+.brand-large {
+    font-size: 40px; 
+    font-weight: normal; 
+    letter-spacing: 2px;
+    font-family: 'Brush Script MT', cursive;
+    
+}
 
+/* Custom style for the login button */
+.btn-login {
+    padding: 10px 20px; /* Adjust padding */
+    border-radius: 30px; /* Round button shape */
+    background-color: #4a8779; /* Custom background color */
+    color: #fff; /* Text color */
+    border: none; /* No border */
+}
+
+        
 .hero {
     background-image: url('image/interior.png'); 
     background-size: cover;
     background-position: center;
-    height: 620px; 
+    height: 680px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,7 +68,7 @@
     color: #fff; 
 }
 .about {
-    margin: 45px; 
+    margin: 55px; 
 }
 
 /* FAQ Section */
@@ -57,7 +76,7 @@
     text-align: center;
     color: #78c2ad;
     font-size: 15px;
-    margin: 45px; 
+    margin: 55px; 
 }
 
 .accordion-item {

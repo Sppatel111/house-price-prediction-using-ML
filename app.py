@@ -155,11 +155,7 @@ def predict():
             # Make a prediction using the loaded model
             prediction = loaded_model.predict([[area_type, size_bhk, total_sqft, bath, balcony, price_per_sqft]])
             
-        # Format the prediction as a currency value in lakh
-        #prediction_in_lakh = "{:.2f} lakh".format(prediction[0])
         
-        # Convert the prediction to an integer value in rupees
-        #prediction_integer = int(prediction[0] * 100000)
         
         # Convert the prediction to an integer value in rupees using NumPy
         prediction_integer = np.round(prediction[0] * 100000).astype(int)

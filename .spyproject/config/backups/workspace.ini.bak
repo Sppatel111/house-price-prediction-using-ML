@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['C:\\Users\\Admin\\.spyder-py3\\temp.py', 'app.py', 'templates\\landing.html']
+recent_files = ['app.py', 'templates\\sell_home.html', 'static\\style.css', 'templates\\landing.html', 'static\\container.css', 'templates\\user_login.html', 'templates\\user_register.html', 'templates\\buy_home.html', 'templates\\home.html', 'templates\\prediction_result.html', 'cleaning.py', 'bangalore_training.py']
 
 [main]
 version = 0.2.0
