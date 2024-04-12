@@ -39,7 +39,7 @@ The workflow involves:
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/Sppatel111/house-price-prediction.git
+    git clone https://github.com/Sppatel111/house-price-prediction-using-ML.git
     ```
 
 2. Set up the MySQL database (for user authentication and session management) by creating a database named `house_price_prediction` and importing the necessary schema.
